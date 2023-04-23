@@ -103,7 +103,7 @@ class FluxJob(Job):
             # Cancel the job
             with suppress(RuntimeError):  # deleting job when job already gone
                 cls._call(shlex.split(cancel_command) + [job_id])
-            cls._cleanup_job(job_id)
+            # cls._cleanup_job(job_id)
             logger.debug("Closed job %s", job_id)
 
     @classmethod
